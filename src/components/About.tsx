@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from './Button'; 
-import profilePic from '../assets/profile.png';
+import profilePic from '../assets/profile.webp';
 
 import {
   FaReact,
