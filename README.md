@@ -1,5 +1,7 @@
 # React + TypeScript + Vite
 
+Interessado em ver o projeto rodando? Clique no link <a href="https://portfolio-react-mxb5x5h9g-jguilhermepaivas-projects.vercel.app/" target="_blank" rel="noopener noreferrer">Acessar projeto</a>
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
