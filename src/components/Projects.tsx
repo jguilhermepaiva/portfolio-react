@@ -44,7 +44,7 @@ export const Projects: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 px-5 sm:px-10 bg-[#0f1623]" id="projects">
+    <section className="py-24 px-5 sm:px-10" id="projects">
       <div className="mx-auto max-w-7xl">
         <div className="mb-12 text-center md:text-left">
           <h2 className="text-4xl font-bold text-white">Projetos</h2>
