@@ -19,19 +19,17 @@ export const Hero: React.FC = () => {
       </div>
 
       <div className="flex flex-col gap-10 text-center md:order-1 md:text-left">
-        <p className="text-lg text-text-secondary">João Guilherme Pontes de Paiva</p>
+        
         <h1 className="text-5xl font-bold leading-tight lg:text-7xl">
-          <span className="text-primary">Desenvolvedor Front-end</span> React e TypeScript.
+          Engenheiro de Software focado em interfaces escaláveis e Cloud.
         </h1>
         <p className="max-w-xl text-lg text-text-secondary">
-          Desenvolvedor apaixonado por programação web, com 2 anos de experiência na criação de interfaces modernas e
-          funcionais. Atuo principalmente com React, TypeScript, integração de APIs REST e metodologias ágeis, sempre
-          buscando evoluir e contribuir de forma completa para os projetos.
+          Com 4 anos de experiência transformando requisitos complexos em interfaces de alta performance, utilizo React e TypeScript para construir produtos digitais robustos. Atualmente, foco em unir a excelência no Front-end com arquiteturas de nuvem, garantindo soluções que não são apenas bonitas, mas preparadas para o mercado global.
         </p>
 
-        <div className="self-center md:self-start">
+        {/* <div className="self-center md:self-start">
           <Button variant="primary">Conheça mais</Button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

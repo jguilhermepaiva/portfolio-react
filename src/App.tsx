@@ -1,6 +1,8 @@
-import { Header } from './components/Header';
-import { Hero } from './components/Hero';
-import { About } from './components/About'; 
+import { Header } from "./components/Header";
+import { Hero } from "./components/Hero";
+import { About } from "./components/About";
+import { Projects } from "./components/Projects";
+import { Contact } from './components/Contact';
 
 function App() {
   return (
@@ -9,8 +11,14 @@ function App() {
       <main className="mx-auto max-w-7xl">
         <Header />
         <Hero />
-        <div className='h-0.5 bg-[#55E5A4]'></div>
+        <div className="h-0.5 bg-[#55E5A4]"></div>
         <About />
+        <div className="h-0.5 bg-[#55E5A4]"></div>
+        <Projects />
+        
+        <div className="h-0.5 bg-[#55E5A4]"></div>
+
+       <Contact />
       </main>
     </div>
   );
