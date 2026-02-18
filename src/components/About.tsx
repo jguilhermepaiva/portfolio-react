@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "./Button";
-import profilePic from "../assets/profile.png";
+import profilePic from "../assets/profile.webp";
 
 import { FaReact, FaPython, FaHtml5, FaCss3Alt, FaGitAlt, FaAws, FaNodeJs, FaDocker } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
