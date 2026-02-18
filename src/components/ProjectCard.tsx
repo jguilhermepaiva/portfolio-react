@@ -1,3 +1,4 @@
+// src/components/ProjectCard.tsx
 import React, { useState } from 'react';
 import { FaGithub, FaExternalLinkAlt, FaChevronLeft, FaChevronRight, FaTimes } from 'react-icons/fa';
 
@@ -5,7 +6,7 @@ interface ProjectProps {
   title: string;
   description: string;
   tags: string[];
-  githubUrl?: string; // <--- AGORA É OPCIONAL (tem o ?)
+  githubUrl?: string;
   liveUrl?: string;
   images: string[];
 }
@@ -43,21 +44,30 @@ export const ProjectCard: React.FC<ProjectProps> = ({ title, description, tags, 
           </div>
 
           {images.length > 1 && (
-            <div className="absolute inset-0 flex items-center justify-between px-2 opacity-0 transition-opacity group-hover:opacity-100">
-              <button onClick={prevImage} className="rounded-full bg-black/60 p-1.5 text-white hover:bg-primary transition-colors hover:scale-110 z-10">
-                <FaChevronLeft size={14} />
+            <div className="absolute inset-0 flex items-center justify-between px-2 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
+              <button 
+                onClick={prevImage} 
+                // ADICIONADO: 'bg-transparent' para anular o verde do index.css
+                // ADICIONADO: 'border-none' para garantir que não pegue bordas do global
+                className="btn-clean bg-transparent border-none text-white hover:text-primary transition-all active:scale-95 z-10 p-1 drop-shadow-sm outline-none focus:outline-none"
+              >
+                <FaChevronLeft size={18} />
               </button>
-              <button onClick={nextImage} className="rounded-full bg-black/60 p-1.5 text-white hover:bg-primary transition-colors hover:scale-110 z-10">
-                <FaChevronRight size={14} />
+              <button 
+                onClick={nextImage} 
+                // ADICIONADO: 'bg-transparent' e 'border-none'
+                className="btn-clean bg-transparent border-none text-white hover:text-primary transition-all active:scale-95 z-10 p-1 drop-shadow-sm outline-none focus:outline-none"
+              >
+                <FaChevronRight size={18} />
               </button>
             </div>
           )}
 
-          <div className="absolute bottom-2 left-1/2 flex -translate-x-1/2 gap-1.5 z-10">
+          <div className="absolute bottom-2 left-1/2 flex -translate-x-1/2 gap-1 z-10">
             {images.map((_, idx) => (
               <div 
                 key={idx} 
-                className={`h-1.5 w-1.5 rounded-full transition-all shadow-sm ${idx === currentIndex ? 'bg-primary w-3' : 'bg-white/70'}`}
+                className={`h-1 w-1 rounded-full transition-all shadow-sm ${idx === currentIndex ? 'bg-primary w-2.5' : 'bg-white/50'}`}
               />
             ))}
           </div>
@@ -75,7 +85,6 @@ export const ProjectCard: React.FC<ProjectProps> = ({ title, description, tags, 
           <p className="text-gray-400 text-sm mb-6 line-clamp-3 flex-grow">{description}</p>
           
           <div className="flex gap-4 pt-4 border-t border-gray-700">
-            {/* --- SÓ RENDERIZA SE TIVER URL --- */}
             {githubUrl && (
               <a 
                 href={githubUrl} 
@@ -86,7 +95,6 @@ export const ProjectCard: React.FC<ProjectProps> = ({ title, description, tags, 
                 <FaGithub size={18} /> Code
               </a>
             )}
-
             {liveUrl && (
               <a 
                 href={liveUrl} 
@@ -101,6 +109,7 @@ export const ProjectCard: React.FC<ProjectProps> = ({ title, description, tags, 
         </div>
       </div>
 
+      {/* MODAL */}
       {isModalOpen && (
         <div 
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm animate-in fade-in duration-200"
@@ -109,7 +118,7 @@ export const ProjectCard: React.FC<ProjectProps> = ({ title, description, tags, 
           <div className="relative max-w-5xl w-full max-h-[90vh] flex flex-col items-center">
             <button 
               onClick={() => setIsModalOpen(false)}
-              className="absolute -top-12 right-0 text-white hover:text-primary transition-colors p-2"
+              className="absolute -top-12 right-0 bg-transparent border-none text-white hover:text-primary transition-colors p-2"
             >
               <FaTimes size={24} />
             </button>
@@ -119,6 +128,25 @@ export const ProjectCard: React.FC<ProjectProps> = ({ title, description, tags, 
               className="max-h-[85vh] w-auto rounded-lg shadow-2xl object-contain"
               onClick={(e) => e.stopPropagation()}
             />
+            
+            {images.length > 1 && (
+              <>
+                 <button 
+                    onClick={(e) => { e.stopPropagation(); prevImage(e); }} 
+                    // Também adicionei bg-transparent aqui para o modal
+                    className="btn-clean absolute left-0 md:-left-12 top-1/2 -translate-y-1/2 bg-transparent border-none text-white hover:text-primary transition-all p-2 drop-shadow-lg outline-none"
+                 >
+                    <FaChevronLeft size={30} />
+                 </button>
+                 <button 
+                    onClick={(e) => { e.stopPropagation(); nextImage(e); }} 
+                    // E aqui também
+                    className="btn-clean absolute right-0 md:-right-12 top-1/2 -translate-y-1/2 bg-transparent border-none text-white hover:text-primary transition-all p-2 drop-shadow-lg outline-none"
+                 >
+                    <FaChevronRight size={30} />
+                 </button>
+              </>
+            )}
           </div>
         </div>
       )}

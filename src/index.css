@@ -78,3 +78,15 @@ html {
     color: #151C25;
   }
 }
+
+
+.btn-clean {
+  background-color: transparent !important;
+  border: none !important;
+  color: white !important; 
+  padding: 0 !important;   
+}
+
+.btn-clean:hover {
+  color: #55E5A4 !important; 
+}
