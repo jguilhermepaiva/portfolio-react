@@ -36,7 +36,7 @@ export const Projects: React.FC = () => {
     {
       title: "Advanced Todo List",
       description: "Gerenciador de tarefas com persistência de dados e filtros de categoria.",
-      tags: ["React", "Local Storage", "CSS Modules"],
+      tags: ["React", "SQLite", "Figma"],
       githubUrl: "#",
       liveUrl: "https://todo-project-three-omega.vercel.app/",
       images: ["/todo1.png"],
