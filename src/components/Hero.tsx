@@ -3,7 +3,7 @@ import profilePic from "../assets/profile.webp";
 
 export const Hero: React.FC = () => {
   return (
-    <section className="grid min-h-[80vh] grid-cols-1 items-center gap-12 px-5 py-8 sm:px-10 md:grid-cols-2">
+    <section className="grid min-h-[75vh] grid-cols-1 items-center gap-12 px-5 py-8 sm:px-10 md:grid-cols-2">
       <div className="flex items-center justify-center md:order-2">
         <div className="grid h-96 w-96 items-center justify-center">
           <div className="bg-[#55E5A4] col-start-1 row-start-1 h-full w-full animate-blob overflow-hidden rounded-[45%_35%_70%_30%_/_30%_50%_50%_70%] bg-primary p-1"></div>
